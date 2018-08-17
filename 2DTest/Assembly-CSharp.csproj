@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LangVersion>4</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{3798ADE3-A6FC-2DBA-7C00-91007A141971}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_1_2;UNITY_2017_1;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_MODULAR_UNITYENGINE_ASSEMBLIES;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\2DDL\2DLight\AssetUtility\AssetUtility.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Core\CasterCollider.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Core\CoreUtils.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Core\DynamicLight.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Core\DynamicLightEvents.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\Attributes.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\ButtonAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\FieldDescriptionAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\IncrementableAttribute.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\IncrementableAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\PopUpAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\SeparatorAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\PropertyDrawers\TitleAttributeDrawer.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Sight\SightListenerTemplate.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\CoroutineExt\CoroutineExtentions.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\ExtendsMe.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\GLDebug.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\interface_touch.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\SetRenderQueue.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\TablaSenoCoseno.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\more\TimerClass.cs" />
+     <Compile Include="Assets\2DDL\2DLight\Utils\RegisterCaster.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\AddOnBase\AddOnBase.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\ColorBlending.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\Fire.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\Illumination.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\LensFlares.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\LookAt.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\Rotation.cs" />
+     <Compile Include="Assets\2DDL\Add-ons\Source.cs" />
+     <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\CharacterController2D\CharacterController2D.cs" />
+     <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\restoreStone.cs" />
+     <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\rotate.cs" />
+     <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\rotationUsingSync.cs" />
+     <Compile Include="Assets\2DDL\Examples\__Examples_Scripts\SmoothFollow.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\BlinkLight.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CatchTheBlueTorch.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CharacterMovement.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\CreditsScript.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\followPlayer.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\OpenEgyptianGate.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\SetProximityFactor.cs" />
+     <Compile Include="Assets\2DDL\Examples\0 - DUNGEON GAME\UnlockTheExitDoor.cs" />
+     <Compile Include="Assets\2DDL\Examples\12 - Create and register Casters by code\addingCastersUnefficient.cs" />
+     <Compile Include="Assets\2DDL\Examples\12 - Create and register Casters by code\UsingAddColliderToScene.cs" />
+     <Compile Include="Assets\2DDL\Examples\13 - Delete Casters by code in PlayMode\DeleteCasters.cs" />
+     <Compile Include="Assets\2DDL\Examples\14 - Creation of both 2DDLight and Casters Procedurally\ProceduralLightAndCasters.cs" />
+     <Compile Include="Assets\2DDL\Examples\15 - Light with Physics\followBody.cs" />
+     <Compile Include="Assets\2DDL\Examples\2 - Fire Light\AnimateFireSprite.cs" />
+     <Compile Include="Assets\2DDL\Examples\3 - Multiples Lights\interface_manager.cs" />
+     <Compile Include="Assets\2DDL\Examples\5 - Bomb Explosion Simulation and Visibility algorithm\bomb.cs" />
+     <Compile Include="Assets\2DDL\Examples\5 - Bomb Explosion Simulation and Visibility algorithm\PlayerStatusManager.cs" />
+     <Compile Include="Assets\2DDL\Examples\6 - Fog of War with Occlusion effect and Sight with dispatch events\OcclusionEventsDelegate.cs" />
+     <Compile Include="Assets\2DDL\Examples\9 - Light Car\SpawnCasters.cs" />
+     <Compile Include="Assets\2DDL\Examples\OLD Examples\0 - First Simple\punchRadius.cs" />
+     <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\bullet.cs" />
+     <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\fire.cs" />
+     <Compile Include="Assets\2DDL\Examples\OLD Examples\8 - ConeOfSight - FieldOfView\rotate_2.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\AdvancedExamples\AutoSelect\MultiLayerTouch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\AdvancedExamples\AutoSelect\MultiLayerUI.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\AdvancedExamples\MultiCamera\MultiCameraTouch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\AdvancedExamples\MultiCamera\MultiCameraUI.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\GameExemple\RTSExample\CubeSelect.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\GameExemple\RTSExample\RTSCamera.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\GameExemple\RunBall\Ball.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\GameExemple\RunBall\BallRunPlayer.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\GameExemple\RunBall\ThirdPersonCamera.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\LoadExamples.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\MultiFinger\FingerTouch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\MultiFinger\MutliFingersScreenTouch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\DoubleTapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\DragMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\LongTapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\Swipe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\TapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\OneFinger\TouchMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\PinchMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TooglePickMethodUI.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwistMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoDoubleTapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoDragMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoLongTapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoSwipe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoTapMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\SimpleExamples\TwoFingers\TwoTouchMe.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UICompatibility\ETWindow.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UICompatibility\GlobalEasyTouchEvent.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UICompatibility\UICompatibility.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UICompatibility\UIWindow.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UITwistPinch\UIDrag.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UITwistPinch\UIPinch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Example\UnityUI\UITwistPinch\UITwist.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\BaseFinger.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Component\EasyTouchTrigger.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\EasyTouch.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\EasyTouchInput.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\ECamera.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Finger.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\Gesture.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouch\Plugins\TwoFingerGesture.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\_Medias\SliderText.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Button-Event-Input\ButtonInputUI.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\Button-Event-Input\ButtonUIEvent.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\ControlEventInput\ControlUIEvent.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\ControlEventInput\ControlUIInput.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\DPadClassicalTime\DPadParameterUI.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\FPSExample\FPSPlayerControl.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\FPSExample\ImpactEffect.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\JoystickParameter\AxisXUi.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\LoadLevelScript.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Examples\TouchPad-Event-Input\TouchPadUIEvent.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ComponentExtensions.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCArea.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCAxis.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCBase.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCButton.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCDPad.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCInput.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCJoystick.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCSingleton.cs" />
+     <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
+     <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\ControlRadius.cs" />
+     <Compile Include="Assets\Scripts\InstanceEvents.cs" />
+     <Compile Include="Assets\Scripts\LightManager.cs" />
+     <Compile Include="Assets\Scripts\MyThirdPersonCamera.cs" />
+     <Compile Include="Assets\Scripts\SwitchLight.cs" />
+     <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturized.shader" />
+     <None Include="Assets\2DDL\Bugs\READ FIRST.txt" />
+     <None Include="Assets\2DDL\2DLight\Shaders\occluded.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\RadialGradientAlphaBlend.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\DepthMask.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\CGTexturizing.shader" />
+     <None Include="Assets\EasyTouchBundle\EasyTouchControls\ReleaseNotes.txt" />
+     <None Include="Assets\2DDL\2DLight\Shaders\OffsetShader.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturizedAdditive.shader" />
+     <None Include="Assets\EasyTouchBundle\Readme.txt" />
+     <None Include="Assets\2DDL\Examples\16 - Soft and Smooth shadows edges\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturizedWithAlpha.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\StencilMask.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\VertexColor.shader" />
+     <None Include="Assets\2DDL\2DLight\Shaders\Gradient-ZFighting.shader" />
+     <None Include="Assets\EasyTouchBundle\EasyTouchControls\Readme.txt" />
+     <None Include="Assets\EasyTouchBundle\EasyTouch\RealseNotes.txt" />
+     <None Include="Assets\2DDL\2DLight\Shaders\occluder.shader" />
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="Resources2DDL">
+ <HintPath>/Users/togchen/2DTest/Assets/2DDL/2DLight/Utils/Resources2DDL.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
