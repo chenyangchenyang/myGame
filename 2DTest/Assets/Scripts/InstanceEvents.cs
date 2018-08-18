@@ -7,54 +7,62 @@
 		
 		DynamicLight2D.DynamicLight light2d;
 
-		Vector3 startPosition;
+		Vector3 CameraStartPostion;
 
-		public GameObject Lights;
-
-		DynamicLight2D.DynamicLight []light2ds;
-
-
-		IEnumerator Start () {
+		public GameObject[] Lights;
+		//IEnumerator Start () 
+		void Start1()
+		{
 			// Find and set 2DLight Object //
-			light2d = GameObject.Find("Light/2DLight").GetComponent<DynamicLight2D.DynamicLight>() as DynamicLight2D.DynamicLight;
+			light2d = GameObject.Find("Light/2DLight").GetComponent<DynamicLight2D.DynamicLight>();
 
-			light2ds= Lights.GetComponentsInChildren<DynamicLight2D.DynamicLight> ();
-
-
-			startPosition = transform.parent.position;
+			CameraStartPostion = transform.parent.position;
 			// Add listeners
 			
 			light2d.OnEnterFieldOfView += onEnter;
-			light2d.OnExitFieldOfView += onExit;
+			light2d.OnExitFieldOfView += onExit; 
 
-			/*
-			foreach(DynamicLight2D.DynamicLight light in light2ds)
-			{
-				light.OnEnterFieldOfView += onEnter;
-				light.OnExitFieldOfView += onExit;
-			}
-			*/
-			yield return new WaitForEndOfFrame();
+			//yield return new WaitForEndOfFrame();
 			//StartCoroutine(loop());
 			
 		}
 		
-		
+
+		void Start()
+		{
+			CameraStartPostion = transform.parent.position;
+
+			foreach(GameObject oneLight in Lights)
+			{
+				light2d = oneLight.GetComponent<DynamicLight2D.DynamicLight>();
+
+
+				// Add listeners
+				light2d.OnEnterFieldOfView += onEnter;
+				light2d.OnExitFieldOfView += onExit; 
+			}
+		}
+
 		void onExit(GameObject g, DynamicLight2D.DynamicLight light)
 		{
-			Debug.Log("OnExit");
-			GetComponent<SpriteRenderer>().color = Color.white;
+			print ("onExit :"+g.name);
+
+			if (gameObject.GetInstanceID () == g.GetInstanceID ()) 
+			{
+				Debug.Log("OnExit");
+				//GetComponent<SpriteRenderer>().color = Color.white;
+			}
 		}
 		
 		void onEnter(GameObject g, DynamicLight2D.DynamicLight light)
 		{
-			
-			if (gameObject.GetInstanceID () == g.GetInstanceID ()) 
+			print ("onEnter :"+g.name);
+			if (gameObject.GetInstanceID () == g.GetInstanceID () || transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()) 
 			{
 				Debug.Log("OnEnter");
-				GetComponent<SpriteRenderer>().color = Color.red;
+				//GetComponent<SpriteRenderer>().color = Color.red;
 
-				transform.parent.position = startPosition;
+				transform.parent.position = CameraStartPostion;
 			}
 			
 		}

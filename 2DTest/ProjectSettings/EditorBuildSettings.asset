@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Demo.unity
+    guid: 82a8df42dc25347e8b9d07b6b5a38b61
+  - enabled: 0
     path: Assets/2DDL/Examples/4 - Events/4 - OnEnterOnExitEvents.unity
     guid: 0f33c2df91b917345b6731d2e616b082

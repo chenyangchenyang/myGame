@@ -175,8 +175,9 @@
      <Compile Include="Assets\Scripts\CameraControl.cs" />
      <Compile Include="Assets\Scripts\ControlRadius.cs" />
      <Compile Include="Assets\Scripts\InstanceEvents.cs" />
-     <Compile Include="Assets\Scripts\LightManager.cs" />
+     <Compile Include="Assets\Scripts\LightControl.cs" />
      <Compile Include="Assets\Scripts\MyThirdPersonCamera.cs" />
+     <Compile Include="Assets\Scripts\PlayerControl.cs" />
      <Compile Include="Assets\Scripts\SwitchLight.cs" />
      <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
      <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturized.shader" />

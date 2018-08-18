@@ -9,33 +9,46 @@ public class SwitchLight : MonoBehaviour {
 	private Vector3 Position;
 
 	private float UpDistance = 100.0f;
+
+	private string switchTag="switch";
+
 	// Use this for initialization
 	void Start () 
 	{
 		Position = Light2D.transform.position;
+
+		GameObject gameObject= transform.parent.Find("2DLight").gameObject;
+
+		Light2D= gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+		if (!Input.GetMouseButtonDown (0)) 
+		{
+			return;
+		}
+
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero); 
 
 		if(hit.collider != null)
-		{ 
-			Debug.Log ("Target Position: " + hit.collider.gameObject.transform.position);
-
-
-			if (Light2D.transform.position.y < 10) 
+		{
+			if(hit.collider.gameObject== this.gameObject)
 			{
-				Position = Light2D.transform.position;
+				if (Light2D.transform.position.y < 10) 
+				{
+					Position = Light2D.transform.position;
 
-				Vector3 newPos= Position;
-				newPos.y = UpDistance;
-				Light2D.transform.position = newPos;
-			} 
-			else 
-			{
-				Light2D.transform.position = Position;
+					Vector3 newPos = Position;
+					newPos.y = UpDistance;
+					Light2D.transform.position = newPos;
+
+				} 
+				else 
+				{
+					Light2D.transform.position = Position;
+				}
 			}
 		}
 	}
