@@ -2,53 +2,67 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwitchLight : MonoBehaviour {
-
-	public GameObject Light2D;
-
-	private Vector3 Position;
-
+public class SwitchLight : MonoBehaviour
+{
 	private float UpDistance = 100.0f;
 
-	private string switchTag="switch";
+	public GameObject[] Light2Ds;
 
 	// Use this for initialization
 	void Start () 
 	{
-		Position = Light2D.transform.position;
-
-		GameObject gameObject= transform.parent.Find("2DLight").gameObject;
-
-		Light2D= gameObject;
+		if (!InVaild()) 
+		{
+			return;
+		}
 	}
-	
+
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		if (!Input.GetMouseButtonDown (0)) 
+		if (!Input.GetMouseButtonDown (0) || !InVaild()) 
 		{
 			return;
 		}
 
 		RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero); 
 
-		if(hit.collider != null)
+		if(null != hit.collider)
 		{
-			if(hit.collider.gameObject== this.gameObject)
+			if(hit.collider.gameObject== gameObject)
 			{
-				if (Light2D.transform.position.y < 10) 
-				{
-					Position = Light2D.transform.position;
+				ChangePostion ();
+			}
+		}
+	}
 
-					Vector3 newPos = Position;
-					newPos.y = UpDistance;
-					Light2D.transform.position = newPos;
+	bool InVaild()
+	{
+		bool flag = !(null == Light2Ds || 0 == Light2Ds.Length);
 
-				} 
-				else 
-				{
-					Light2D.transform.position = Position;
-				}
+		return flag;
+	}
+
+	void ChangePostion()
+	{
+		foreach(GameObject Light2D in Light2Ds)
+		{
+			if (Light2D.transform.position.y < 10) 
+			{
+				Vector3 Position = Light2D.transform.position;
+
+				Vector3 newPos = Position;
+				newPos.y += UpDistance;
+				Light2D.transform.position = newPos;
+
+			} 
+			else 
+			{
+				Vector3 Position = Light2D.transform.position;
+
+				Vector3 newPos = Position;
+				newPos.y -= UpDistance;
+				Light2D.transform.position = newPos;
 			}
 		}
 	}

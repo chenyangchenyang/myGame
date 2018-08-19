@@ -2,31 +2,27 @@
 {
 	using UnityEngine;
 	using System.Collections;
-	
-	public class InstanceEvents : MonoBehaviour {
-		
-		DynamicLight2D.DynamicLight light2d;
+	using UnityEngine.UI;
+	using UnityEngine.SceneManagement;
 
-		Vector3 CameraStartPostion;
+	public class InstanceEvents : MonoBehaviour 
+	{
+		private Vector3 CameraStartPostion;
+
+		private string GameOverStr="GameOver";
+
+		private GUIText TextComponent;
 
 		public GameObject[] Lights;
-		//IEnumerator Start () 
-		void Start1()
+
+		public bool IsFirst = true;
+
+		public GameObject GUI;
+
+		public GUIText GetTextComponent()
 		{
-			// Find and set 2DLight Object //
-			light2d = GameObject.Find("Light/2DLight").GetComponent<DynamicLight2D.DynamicLight>();
-
-			CameraStartPostion = transform.parent.position;
-			// Add listeners
-			
-			light2d.OnEnterFieldOfView += onEnter;
-			light2d.OnExitFieldOfView += onExit; 
-
-			//yield return new WaitForEndOfFrame();
-			//StartCoroutine(loop());
-			
+			return TextComponent;
 		}
-		
 
 		void Start()
 		{
@@ -34,13 +30,17 @@
 
 			foreach(GameObject oneLight in Lights)
 			{
-				light2d = oneLight.GetComponent<DynamicLight2D.DynamicLight>();
+				DynamicLight2D.DynamicLight light2d = oneLight.GetComponent<DynamicLight2D.DynamicLight>();
 
 
 				// Add listeners
 				light2d.OnEnterFieldOfView += onEnter;
 				light2d.OnExitFieldOfView += onExit; 
 			}
+
+			TextComponent = GUI.GetComponentInChildren<GUIText> ();
+			TextComponent.color = Color.red;
+			TextComponent.text = "";
 		}
 
 		void onExit(GameObject g, DynamicLight2D.DynamicLight light)
@@ -57,16 +57,53 @@
 		void onEnter(GameObject g, DynamicLight2D.DynamicLight light)
 		{
 			print ("onEnter :"+g.name);
+
 			if (gameObject.GetInstanceID () == g.GetInstanceID () || transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()) 
 			{
-				Debug.Log("OnEnter");
+				
 				//GetComponent<SpriteRenderer>().color = Color.red;
+				/*
+				if (!IsShootPlayer(light)) 
+				{
+					return;
+				}*/
 
-				transform.parent.position = CameraStartPostion;
+				TextComponent.text = GameOverStr;
+
+				Debug.Log("OnEnter");
+
+				Invoke ("ReStart", 1);
 			}
 			
 		}
-		
+
+
+		bool IsShootPlayer(DynamicLight light)
+		{
+			Vector3 origin = light.transform.position;
+			Vector3 direction= gameObject.transform.position- light.transform.position;
+			direction.Normalize ();
+
+			Ray ray = new Ray(origin, direction);
+
+			Debug.DrawRay(origin, direction);
+
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit, 10000))
+			{
+				if ((hit.collider.gameObject.tag == gameObject.tag)) 
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
+		void ReStart()
+		{
+			SceneManager.LoadScene("Demo");
+		}
 	}
 
 }
