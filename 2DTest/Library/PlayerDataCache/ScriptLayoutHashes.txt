@@ -1,6 +1,6 @@
 OSXStandalone
 c832d4609cce4dbd38095601c059dc70 Assembly-CSharp.dll:.EasyTouch
-b6b089f71022731c4e08a129501aa2f3 Assembly-CSharp.dll:DynamicLight2D.InstanceEvents
+f219f55a367ad645c463e9c454acb236 Assembly-CSharp.dll:DynamicLight2D.InstanceEvents
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UsingAddColliderToScene
 05524b8f659e7bfe5756d1335fec24ba Assembly-UnityScript.dll:.PostEffectsBase
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
@@ -17,6 +17,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 7b848b7feaa524953d09fc1851efa6da UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 c24a21b131bfa67be1162db2cba4b52b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DragMe
+a0ccae60918514b0634b55d0ec16f940 Assembly-CSharp.dll:.LightControl
 0abf9c67ce787425aa53b5a87722ae38 Assembly-CSharp.dll:Prime31.CharacterController2D
 e14ec93a645e0878c644b397f87788a2 Assembly-CSharp.dll:DynamicLight2D.DynamicLight
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TwoTouchMe
@@ -127,6 +128,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+9a6648f41a09bd42969e3efea32df0bd Assembly-CSharp.dll:.PlayerControl
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.RTSCamera
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TouchMe
 a30beadf4d109f44144b9a9f42e61cbf Assembly-UnityScript.dll:.Blur
@@ -233,6 +235,3 @@ cc87950a096de997dd32916dd35505ce Assembly-CSharp.dll:DynamicLight2D.Rotation
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SliderText
 750189b42ec599a86f3eb66f7024f3e0 Assembly-CSharp.dll:.ControlUIInput
 7a9b2bc4c7be55d414c6022a3dda7baa Assembly-CSharp.dll:.MultiCameraUI
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ControlRadius
-9a6648f41a09bd42969e3efea32df0bd Assembly-CSharp.dll:.PlayerControl
-a0ccae60918514b0634b55d0ec16f940 Assembly-CSharp.dll:.LightControl

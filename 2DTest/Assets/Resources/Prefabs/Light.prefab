@@ -198,13 +198,13 @@ MonoBehaviour:
   Intensity: 1
   LightMaterial: {fileID: 2100000, guid: 721fe554da1cfcc46abfb09fd18552a5, type: 2}
   light2DType: 0
-  SortOrderID: 0
+  SortOrderID: 10
   strokeRender: 0
-  LightRadius: 17
+  LightRadius: 22.9
   Segments: 5
   Layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 257
   useEvents: 1
   objectsWithinSight: 0
   intelliderConvex: 0
