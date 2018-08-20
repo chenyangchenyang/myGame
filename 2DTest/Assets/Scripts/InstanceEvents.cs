@@ -7,17 +7,18 @@
 
 	public class InstanceEvents : MonoBehaviour 
 	{
+		public GameObject GUI;
+
+		public GameObject LightRoot;
+
 		private Vector3 CameraStartPostion;
 
 		private string GameOverStr="GameOver";
 
+		private string Scene1Name="Demo";
+		private string Scene2Name="Demo2";
+
 		private GUIText TextComponent;
-
-		public GameObject[] Lights;
-
-		public bool IsFirst = true;
-
-		public GameObject GUI;
 
 		public GUIText GetTextComponent()
 		{
@@ -26,22 +27,22 @@
 
 		void Start()
 		{
+			DynamicLight2D.DynamicLight[] Lights= LightRoot.GetComponentsInChildren<DynamicLight2D.DynamicLight> ();
+
 			CameraStartPostion = transform.parent.position;
 
-			foreach(GameObject oneLight in Lights)
+			foreach(DynamicLight2D.DynamicLight light in Lights)
 			{
-				DynamicLight2D.DynamicLight light2d = oneLight.GetComponent<DynamicLight2D.DynamicLight>();
-
-
 				// Add listeners
-				light2d.OnEnterFieldOfView += onEnter;
-				light2d.OnExitFieldOfView += onExit; 
+				light.OnEnterFieldOfView += onEnter;
+				light.OnExitFieldOfView += onExit; 
 			}
 
 			TextComponent = GUI.GetComponentInChildren<GUIText> ();
 			TextComponent.color = Color.red;
 			TextComponent.text = "";
 		}
+
 
 		void onExit(GameObject g, DynamicLight2D.DynamicLight light)
 		{
@@ -56,9 +57,10 @@
 		
 		void onEnter(GameObject g, DynamicLight2D.DynamicLight light)
 		{
-			print ("onEnter :"+g.name);
+			//print ("onEnter :"+g.name);
 
-			if (gameObject.GetInstanceID () == g.GetInstanceID () || transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()) 
+			//|| transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()
+			if (gameObject.GetInstanceID () == g.GetInstanceID () ) 
 			{
 				
 				//GetComponent<SpriteRenderer>().color = Color.red;
@@ -72,7 +74,17 @@
 
 				Debug.Log("OnEnter");
 
-				Invoke ("ReStart", 1);
+				string sceneName= SceneManager.GetActiveScene ().name;
+				if (Scene1Name == sceneName) 
+				{
+					
+				}
+				else if(Scene2Name == sceneName)
+				{
+					
+				}
+
+				ReStart ();
 			}
 			
 		}
@@ -102,7 +114,14 @@
 
 		void ReStart()
 		{
-			SceneManager.LoadScene("Demo");
+			SceneManager.LoadScene(Scene2Name);
+		}
+
+		void ReZero()
+		{
+			TextComponent.text = "";
+
+			transform.parent.position= CameraStartPostion;
 		}
 	}
 

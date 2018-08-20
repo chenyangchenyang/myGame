@@ -173,7 +173,6 @@
      <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCSingleton.cs" />
      <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
-     <Compile Include="Assets\Scripts\ControlRadius.cs" />
      <Compile Include="Assets\Scripts\InstanceEvents.cs" />
      <Compile Include="Assets\Scripts\LightControl.cs" />
      <Compile Include="Assets\Scripts\MyThirdPersonCamera.cs" />
