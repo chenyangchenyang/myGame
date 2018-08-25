@@ -14,9 +14,10 @@ public class CameraControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (transform.position.x < startPosition.x) 
+		/*if (transform.position.x < startPosition.x) 
 		{
 			transform.position = startPosition;
-		}
+		}*/
+
 	}
 }

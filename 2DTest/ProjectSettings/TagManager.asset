@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - switch
+  - onlyTrigger
   layers:
   - Default
   - TransparentFX
@@ -35,9 +36,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Red
+  - Blue
+  - Green
   m_SortingLayers:
   - name: Default
     uniqueID: 0
