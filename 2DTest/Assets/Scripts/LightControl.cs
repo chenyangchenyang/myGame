@@ -11,6 +11,7 @@ public class LightControl : MonoBehaviour
 
 	private Vector3 LightStartPosition;
 	private Vector3 LightNewPosition;
+
 	void Start () 
 	{
 		LightStartPosition = transform.position;

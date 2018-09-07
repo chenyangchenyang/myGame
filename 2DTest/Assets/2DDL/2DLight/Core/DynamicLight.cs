@@ -734,12 +734,12 @@ namespace DynamicLight2D
 				/// Sets the layer mask.
 				/// </summary>
 				public void setLayerMask(){
-						#if UNITY_EDITOR
-						if(!Application.isPlaying && Layer.value <= 0){
-								//Layer = 1<< LayerMask.NameToLayer("ShadowLayer");
-								Layer = LayerMask.GetMask("ShadowLayer-2DDL");
-						}
-						#endif
+						//#if UNITY_EDITOR
+						//if(!Application.isPlaying && Layer.value <= 0){
+						//		//Layer = 1<< LayerMask.NameToLayer("ShadowLayer");
+						//		Layer = LayerMask.GetMask("ShadowLayer-2DDL");
+						//}
+						//#endif
 				}
 
 

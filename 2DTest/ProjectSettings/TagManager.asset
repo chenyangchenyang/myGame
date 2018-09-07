@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - switch
-  - onlyTrigger
+  - OldMan
   layers:
   - Default
   - TransparentFX
@@ -15,6 +15,7 @@ TagManager:
   - UI
   - 
   - 
+  - paint
   - 
   - 
   - 
@@ -27,19 +28,27 @@ TagManager:
   - 
   - 
   - 
+  - red
+  - blue
+  - green
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - Red
-  - Blue
-  - Green
+  - foreground
+  - background
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 3086476197
+    locked: 0
+  - name: main
+    uniqueID: 3697776683
+    locked: 0
+  - name: foregound
+    uniqueID: 2566282669
     locked: 0

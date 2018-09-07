@@ -16,11 +16,10 @@
 		private string GameOverStr="GameOver";
 
 		private string Scene1Name="Demo";
-		private string Scene2Name="Demo2";
 
-		private GUIText TextComponent;
+		private Text TextComponent;
 
-		public GUIText GetTextComponent()
+		public Text GetTextComponent()
 		{
 			return TextComponent;
 		}
@@ -29,7 +28,7 @@
 		{
 			DynamicLight2D.DynamicLight[] Lights= LightRoot.GetComponentsInChildren<DynamicLight2D.DynamicLight> ();
 
-			CameraStartPostion = transform.parent.position;
+			CameraStartPostion = GameObject.FindGameObjectWithTag("OldMan").transform.position;
 
 			foreach(DynamicLight2D.DynamicLight light in Lights)
 			{
@@ -37,8 +36,8 @@
 				light.OnEnterFieldOfView += onEnter;
 				light.OnExitFieldOfView += onExit; 
 			}
-
-			TextComponent = GUI.GetComponentInChildren<GUIText> ();
+				
+			TextComponent= GUI.GetComponentInChildren<Text> ();
 			TextComponent.color = Color.red;
 			TextComponent.text = "";
 		}
@@ -60,7 +59,7 @@
 			//print ("onEnter :"+g.name);
 
 			//|| transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()
-			if (gameObject.GetInstanceID () == g.GetInstanceID () ) 
+			if (gameObject.GetInstanceID () == g.GetInstanceID () || false /*transform.parent.gameObject.GetInstanceID() == g.GetInstanceID ()*/) 
 			{
 				
 				//GetComponent<SpriteRenderer>().color = Color.red;
@@ -73,18 +72,7 @@
 				TextComponent.text = GameOverStr;
 
 				Debug.Log("OnEnter");
-
-				string sceneName= SceneManager.GetActiveScene ().name;
-				if (Scene1Name == sceneName) 
-				{
-					
-				}
-				else if(Scene2Name == sceneName)
-				{
-					
-				}
-
-				ReStart ();
+				Invoke ("ReStart", 0.2f);
 			}
 			
 		}
@@ -114,14 +102,26 @@
 
 		void ReStart()
 		{
-			SceneManager.LoadScene(Scene2Name);
+			string name= SceneManager.GetActiveScene ().name;
+			string loadSceneName = name;
+
+			if(name== Scene1Name)
+			{
+				loadSceneName = "Demo1";
+			}
+            else if(name == "Level0")
+            {
+                loadSceneName = "Level1";
+            }
+
+			SceneManager.LoadScene(loadSceneName);
 		}
 
 		void ReZero()
 		{
 			TextComponent.text = "";
 
-			transform.parent.position= CameraStartPostion;
+			//transform.parent.position= CameraStartPostion;
 		}
 	}
 

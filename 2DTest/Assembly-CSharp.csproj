@@ -173,10 +173,12 @@
      <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCSingleton.cs" />
      <Compile Include="Assets\EasyTouchBundle\EasyTouchControls\Plugins\ETCTouchPad.cs" />
      <Compile Include="Assets\Scripts\CameraControl.cs" />
+     <Compile Include="Assets\Scripts\GroupLightControl.cs" />
      <Compile Include="Assets\Scripts\InstanceEvents.cs" />
      <Compile Include="Assets\Scripts\LightControl.cs" />
      <Compile Include="Assets\Scripts\MyThirdPersonCamera.cs" />
      <Compile Include="Assets\Scripts\PlayerControl.cs" />
+     <Compile Include="Assets\Scripts\ProtectedThing.cs" />
      <Compile Include="Assets\Scripts\SwitchLight.cs" />
      <None Include="Assets\2DDL\2DLight\Shaders\StencilObject.shader" />
      <None Include="Assets\2DDL\2DLight\Shaders\DefaultTexturized.shader" />

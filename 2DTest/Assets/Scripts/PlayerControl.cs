@@ -8,20 +8,21 @@ public class PlayerControl : MonoBehaviour
 {
 
 	public float EndX = 250;
+    public bool move = false;
+    public Vector2 dir;
+    public Vector2 lastPosition;
+	private Text TextComponent;
+    [SerializeField]
+    private float speed = 1;
 
-	private Vector3 CameraStartPosition;
-
-	private GUIText TextComponent;
-
-	void Start () 
+    void Start () 
 	{
-		CameraStartPosition= transform.parent.position;
+        lastPosition = gameObject.GetComponent<Rigidbody2D>().position;
 	}
 	
 
 	void Update () 
 	{
-		
 		if (transform.position.x >= EndX) 
 		{
 			DynamicLight2D.InstanceEvents instanceEvents= GetComponent<DynamicLight2D.InstanceEvents> ();
@@ -32,10 +33,25 @@ public class PlayerControl : MonoBehaviour
 
 			Invoke ("ChangeScene", 1);
 
-		}
-	}
+        }
+        var rb = GetComponent<Rigidbody2D>();
+        if (move)
+        {
+            rb.sharedMaterial.friction = 1;
+            rb.position = rb.position + speed * dir * Time.deltaTime;
+        }   
+        else
+        {
+            rb.sharedMaterial.friction = 1;
+        }
+    }
 
-	void ChangeScene()
+    private void FixedUpdate()
+    {
+        transform.rotation = Quaternion.identity;
+    }
+
+    void ChangeScene()
 	{
 		SceneManager.LoadScene("Success");
 	}
