@@ -6,6 +6,7 @@ TagManager:
   tags:
   - switch
   - OldMan
+  - Foreground2_1
   layers:
   - Default
   - TransparentFX

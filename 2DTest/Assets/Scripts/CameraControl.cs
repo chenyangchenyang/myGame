@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraControl : MonoBehaviour {
+public class CameraControl2 : MonoBehaviour {
 
 	private Vector3 startPosition;
     private Vector3 offset;
