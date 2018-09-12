@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class JoyStickControl : MonoBehaviour {
 
+    public GameObject player;
     public bool ToRight = true;
-    GameObject body;
+    private GameObject body;
 	// Use this for initialization
 	void Start () {
-        body = GameObject.Find("Body");
+        body = player.transform.GetChild(0).gameObject;
 	}
 	
 	// Update is called once per frame
@@ -25,15 +26,16 @@ public class JoyStickControl : MonoBehaviour {
             body.transform.localScale = scale;
         }
         ToRight = (dir.x > 0);
-        GetComponent<PlayerControl>().dir = dir;
-        GetComponent<PlayerControl>().move = true;
-        GetComponent<Animator>().SetBool("Walking", true);
+        player.GetComponent<PlayerControl>().dir = dir;
+        player.GetComponent<PlayerControl>().lastDir = dir;
+        player.GetComponent<PlayerControl>().move = true;
+        player.GetComponent<Animator>().SetBool("Walking", true);
     }
 
     public void OnMoveEnd()
     {
-        GetComponent<PlayerControl>().dir = Vector2.zero;
-        GetComponent<PlayerControl>().move = false;
-        GetComponent<Animator>().SetBool("Walking", false);
+        player.GetComponent<PlayerControl>().dir = Vector2.zero;
+        player.GetComponent<PlayerControl>().move = false;
+        player.GetComponent<Animator>().SetBool("Walking", false);
     }
 }

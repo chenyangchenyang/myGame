@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
     public bool move = false;
     public Vector2 dir;
     public Vector2 lastPosition;
+    public Vector2 lastDir;
 	private Text TextComponent;
     [SerializeField]
     private float speed = 1;
